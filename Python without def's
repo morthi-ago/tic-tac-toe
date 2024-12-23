@@ -1,0 +1,64 @@
+linhas = [
+[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9],
+]
+
+
+turns = 9
+
+
+print(linhas[0][0], linhas[0][1], linhas[0][2])
+print(linhas[1][0], linhas[1][1], linhas[1][2])
+print(linhas[2][0], linhas[2][1], linhas[2][2])
+
+
+while jogadas != 0:
+    line = int(input('Escolha uma linha\n'))
+    column = int(input('Escolha uma coluna\n'))
+    turns -= 1
+    xoro = input('Qual sua escolha?\n')
+    xoro = xoro.upper()
+    
+    substitute = linhas[line-1][column-1]
+    linhastwo = [1,2,3,4,5,6,7,8,9]
+
+    try:
+        if substitute not in linhastwo:
+            raise ValueError
+    except ValueError:
+        print('Esse lugar já foi utilizado')
+    else:
+
+        linhas[line-1][column-1] = xoro
+
+
+        print(linhas[0][0], linhas[0][1], linhas[0][2])
+        print(linhas[1][0], linhas[1][1], linhas[1][2])
+        print(linhas[2][0], linhas[2][1], linhas[2][2])
+
+
+        if linhas[0][0] == linhas[1][0] == linhas[2][0]:
+            print('Vitória')
+            break
+        elif linhas[0][0] == linhas[0][1] == linhas[0][2]:
+            print('Vitória')
+            break
+        elif linhas[0][0] == linhas[1][1] == linhas[2][2]:
+            print('Vitória')
+            break
+        elif linhas[0][1] == linhas[1][1]== linhas[2][1]:
+            print('Vitória')
+            break
+        elif linhas[0][2] == linhas[1][2] == linhas[2][2]:
+            print('Vitória')
+            break
+        elif linhas[1][0] == linhas[1][1] == linhas[1][2]:
+            print('Vitória')
+            break
+        elif linhas[2][0] == linhas[2][1] == linhas[2][2]:
+            print('Vitória')
+            break
+        else:
+            if turns == 0:
+                print('Deu velha')
