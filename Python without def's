@@ -13,7 +13,7 @@ print(linhas[1][0], linhas[1][1], linhas[1][2])
 print(linhas[2][0], linhas[2][1], linhas[2][2])
 
 
-while jogadas != 0:
+while turns != 0:
     line = int(input('Escolha uma linha\n'))
     column = int(input('Escolha uma coluna\n'))
     turns -= 1
