@@ -4,9 +4,7 @@ linhas = [
 [7, 8, 9],
 ]
 
-
 turns = 9
-
 
 print(linhas[0][0], linhas[0][1], linhas[0][2])
 print(linhas[1][0], linhas[1][1], linhas[1][2])
@@ -15,7 +13,18 @@ print(linhas[2][0], linhas[2][1], linhas[2][2])
 
 while turns != 0:
     line = int(input('Escolha uma linha\n'))
+    if line > 3:
+        while line > 3:
+            print('Não pode escolher uma linha que não existe')
+            line = int(input('Escolha uma linha\n'))
+            
+
     column = int(input('Escolha uma coluna\n'))
+    if column > 3:
+        while column > 3:
+            print('Não pode escolher uma coluna que não existe')
+            column = int(input('Escolha uma linha\n'))
+            
     turns -= 1
     xoro = input('Qual sua escolha?\n')
     xoro = xoro.upper()
@@ -57,6 +66,9 @@ while turns != 0:
             print('Vitória')
             break
         elif linhas[2][0] == linhas[2][1] == linhas[2][2]:
+            print('Vitória')
+            break
+        elif linhas[2][0] == linhas[1][1] == linhas[0][2]:
             print('Vitória')
             break
         else:
